@@ -1,6 +1,5 @@
 package com.example.home_pc.sensordemo;
 
-
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         tAccelerometer = (TextView) this.findViewById(R.id.accelerometer);
         tOrientation = (TextView) this.findViewById(R.id.orientation);
         tLight = (TextView) this.findViewById(R.id.light);
-        mSensorManager = (SensorManager) getSystemService(SEARCH_SERVICE);
+        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mOrientation = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
         mLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
@@ -58,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             tLight.setText("光线:"+event.values[0]);
         }
     }
-
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
